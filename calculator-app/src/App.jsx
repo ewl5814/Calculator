@@ -6,10 +6,10 @@ import Calculator from './Calculator.jsx'
 
 
 function App() {
-
+  const [input, setInput] = useState('Testing');
   return (
     <>
-      <Calculator/>
+      <Calculator input={input} onCounterClick={() => handleCounterClick(0)}/>
     </>
   )
 }

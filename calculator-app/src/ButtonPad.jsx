@@ -10,8 +10,8 @@ function ButtonPad(props) {
     <div>
       <button className="btn btn-default target" onClick={props.onClick} value="(">&#40;</button>
       <button className="btn btn-default target" onClick={props.onClick} value=")">&#41;</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="%">%</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="x">x</button>
+      <button className="btn btn-default target" onClick={props.onClick} value="/">/</button>
+      <button className="btn btn-default target" onClick={props.onClick} value="*">x</button>
     </div>
     <div>
       <button className="btn btn-default target" onClick={props.onClick} value="7">7</button>
@@ -32,7 +32,7 @@ function ButtonPad(props) {
       <button className="btn btn-default target" onClick={props.onClick} value="=">=</button>
     </div>
     <div>
-      <button className="btn btn-default target" >ON'C</button>
+      <button className="btn btn-default target" onClick={props.onClick} value="c">ON'C</button>
       <button className="btn btn-default target" onClick={props.onClick} value="0">0</button>
       <button className="btn btn-default target" onClick={props.onClick} value=".">.</button>
     </div>

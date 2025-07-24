@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app) 
 api = Api(app) 
 
-api.add_resource(Count, '/count')
+api.add_resource(History, '/history')
 
 if __name__ == '__main__':
     print("Loading db")

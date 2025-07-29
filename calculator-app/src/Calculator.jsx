@@ -30,18 +30,20 @@ function Calculator(props) {
   async function create(input, answer) {
       const newHistory = input + '=' + answer;
       console.log(newHistory);
-      const request = new Request(url, {
-          method: "POST",
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({equation: newHistory})
-      })
-      try {
-        const response = await fetch(request);
-      }
-      catch(error) {
-        console.error("Error:", error);
+      if (answer != undefined) {
+        const request = new Request(url, {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({equation: newHistory})
+        })
+        try {
+          const response = await fetch(request);
+        }
+        catch(error) {
+          console.error("Error:", error);
+        }
       }
     }
 

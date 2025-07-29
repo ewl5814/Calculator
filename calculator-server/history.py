@@ -20,12 +20,9 @@ class History(Resource):
         """, {'equation': args.equation})
 
     def delete(self):
-        parser = reqparse.RequestParser()
-        parser.add_argument("id", type=int, required=True, help="Petri Dish is required")
-        args = parser.parse_args()
         exec_commit("""
-        DELETE FROM history WHERE id=%(id)s;
-        """, {'id': args.id})
+        DELETE FROM history;
+        """)
 
 
 

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { evaluate } from 'mathjs'
-import { useNavigate } from "react-router";
-
+import { useNavigate } from "react-router"
+import './Calculator.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ButtonPad from './ButtonPad.jsx'
 
@@ -23,7 +23,12 @@ function Calculator(props) {
     }
     else {
       const newValue = input + event.target.value;
+      if (input.length + 1 > 12) {
+        setInput(input);
+      }
+      else {
       setInput(newValue);
+      }
     }
   }
 
@@ -49,13 +54,20 @@ function Calculator(props) {
 
   return (
     <>
-      <h1>Math Time</h1>
-      <div className="well">
-          <div className="row">
-            <p>{input}</p>
-            <ButtonPad onClick={handleClick}/>
-            <button onClick={() => navigate("/history")}>H</button>
-          </div>    
+      <div className="well" id="outer">
+        <div className="row">
+          <div className="well" id="display"> 
+              <p id="input">{input}</p>
+          </div>        
+        </div>
+        <p>TI-108</p>
+        <div className="well inner">
+          <div className="well inner" id="smallWell">
+              <div className="row">
+                <ButtonPad onClick={handleClick}/>
+              </div>    
+          </div>
+        </div>
       </div>
     </>
   );

@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router";
 import { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 
 function History(props) {
@@ -50,11 +52,11 @@ function History(props) {
   return (
     <>
       <div className="well">
-        <ul id="history">
+        <ListGroup id="history">
           {data.map((entry, i) => (
-            <li key={i} value={entry}>{entry}</li>
+            <ListGroupItem key={i} value={entry}>{entry}</ListGroupItem>
           ))}
-        </ul>
+        </ListGroup>
         <button onClick={onClearHistory}></button>
         <button onClick={() => navigate("/")}>H</button>
       </div>

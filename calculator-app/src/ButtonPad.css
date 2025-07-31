@@ -1,0 +1,19 @@
+.red {
+    color: white;
+    background-color: red;
+}
+
+.white {
+    color: #2C577F;
+    background-color: white;
+}
+
+.red.right {
+    margin-left: 10px;
+}
+
+.btn {
+    margin: 2px;
+    margin-top: 8px;
+    width: 4em;
+}

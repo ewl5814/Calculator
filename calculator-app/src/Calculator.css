@@ -1,0 +1,28 @@
+
+#outer {
+    width: 26em;
+    background-color: #2C577F;
+    height: 32em;
+}
+
+.well.inner {
+    background-color: #2C577F;
+    border-color: #17324b;
+}
+
+#display {
+    width: 20em;
+    margin: auto;
+    height: 5em;
+    display: flex;
+    justify-content: right;
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+
+#input {
+    text-align: right;
+    font-family: 'Seven Segment', sans-serif;
+    font-weight: bold;
+    font-size: 3em;
+}

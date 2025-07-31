@@ -5,37 +5,39 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function ButtonPad(props) {
 
+  const navigate = useNavigate();
 
   return (
     <>
     <div>
-      <button className="btn btn-default target" onClick={props.onClick} value="(">&#40;</button>
-      <button className="btn btn-default target" onClick={props.onClick} value=")">&#41;</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="/">/</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="*">x</button>
+      <Button className="red" onClick={props.onClick} value="(">&#40;</Button>
+      <Button className="red" onClick={props.onClick} value=")">&#41;</Button>
+      <Button className="red" onClick={props.onClick} value="/">/</Button>
+      <Button className="red right" onClick={props.onClick} value="*">x</Button>
     </div>
     <div>
-      <button className="btn btn-default target" onClick={props.onClick} value="7">7</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="8">8</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="9">9</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="-">-</button>
+      <Button className="white" onClick={props.onClick} value="7">7</Button>
+      <Button className="white" onClick={props.onClick} value="8">8</Button>
+      <Button className="white" onClick={props.onClick} value="9">9</Button>
+      <Button className="red right" onClick={props.onClick} value="-">-</Button>
     </div>
     <div>
-      <button className="btn btn-default target" onClick={props.onClick} value="4">4</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="5">5</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="6">6</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="+">+</button>
+      <Button className="white" onClick={props.onClick} value="4">4</Button>
+      <Button className="white" onClick={props.onClick} value="5">5</Button>
+      <Button className="white" onClick={props.onClick} value="6">6</Button>
+      <Button className="red right" onClick={props.onClick} value="+">+</Button>
     </div>
     <div>
-      <button className="btn btn-default target" onClick={props.onClick} value="1">1</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="2">2</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="3">3</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="=">=</button>
+      <Button className="white" onClick={props.onClick} value="1">1</Button>
+      <Button className="white" onClick={props.onClick} value="2">2</Button>
+      <Button className="white" onClick={props.onClick} value="3">3</Button>
+      <Button className="red right" onClick={props.onClick} value="=">=</Button>
     </div>
     <div>
-      <button className="btn btn-default target" onClick={props.onClick} value="c">ON'C</button>
-      <button className="btn btn-default target" onClick={props.onClick} value="0">0</button>
-      <button className="btn btn-default target" onClick={props.onClick} value=".">.</button>
+      <Button className="red" onClick={props.onClick} value="c">ON'C</Button>
+      <Button className="white" onClick={props.onClick} value="0">0</Button>
+      <Button className="white" onClick={props.onClick} value=".">.</Button>
+      <Button className="red right" onClick={() => navigate("/history")}>H</Button>
     </div>
     </>
            

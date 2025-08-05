@@ -8,6 +8,9 @@ import ButtonPad from './ButtonPad.jsx'
 
 function Calculator(props) {
   const [input, setInput] = useState('');
+  const [text, setText] = useState('');
+  const [sliceIndex, setSliceIndex] = useState(0);
+
   
   const url = "http://localhost:5000/history";
 
@@ -15,20 +18,31 @@ function Calculator(props) {
 
   function handleClick(event) {
     if (event.target.value == '=') {
-      setInput(evaluate(input));
+      const answer = evaluate(input);
+      setInput('');
+      setText(answer);
+      setSliceIndex(0);
       create(input, evaluate(input));
     }
     else if (event.target.value == 'c') {
       setInput('');
+      setText('');
     }
     else {
-      const newValue = input + event.target.value;
-      if (input.length + 1 > 12) {
-        setInput(input);
+      const newInput = input + event.target.value;
+      if (input.length + 1 <= 12) {
+        if (event.target.value == '-' || event.target.value == '+' || event.target.value == '*' || event.target.value == '/') {
+          setSliceIndex(newInput.length);
+          setText(event.target.value);
+        }
+        else {
+          setText(newInput.substring(sliceIndex));
+          console.log(newInput.substring(sliceIndex));
+        }
+        setInput(newInput);
       }
-      else {
-      setInput(newValue);
-      }
+      console.log(text);
+
     }
   }
 
@@ -57,7 +71,7 @@ function Calculator(props) {
       <div className="well" id="outer">
         <div className="row">
           <div className="well" id="display"> 
-              <p id="input">{input}</p>
+              <p id="input">{text}</p>
           </div>        
         </div>
         <p>TI-108</p>
